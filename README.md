@@ -1,8 +1,8 @@
 # Lab 9 - Quiz and Hackathon
 
-Lab opens with a [quiz](#quiz) and then kicks off the [hackathon](#hackathon).
+Lab opens with a quiz and then kicks off the hackathon.
 
-To get the full point for the lab, you need to get Tasks 1-3 done during the lab. Tasks 4-5 must be finished by the usual deadline of Thursday 23:59.
+To get the full point for the lab, you need to pass Tasks 1-3 during the lab. Tasks 4-5 must be finished by the usual deadline of Thursday 23:59.
 
 Each student build their own project:
 - Go from idea to a deployed product.
