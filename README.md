@@ -9,13 +9,13 @@ Each student build their own project:
 - Use agents and LLMs throughout.
 
 
-**Task 1 (graded by TA after the lab).**
+#### Task 1 (graded by TA after the lab).
 Pen and paper quiz.
 - closed book, no devices allowed.
 - you get random 3 questions from the question bank.
 - answer at least 2 out of 3 correctly.
 
-**Task 2 (approved by TA during the lab).**
+#### Task 2 (approved by TA during the lab).
 The project idea must:
 - Be something simple to build, clearly useful, and easy to explain;
 - Involve backend + db + web dashboard + user-facing agent;
@@ -35,20 +35,20 @@ The product must have these components each fulfilling a useful function:
 > 🟪 **Note**
 > `Telegram` bots deployed on a university VM can fail to receive messages when hosted there.
 
-**Task 3 (approved by TA during the lab).**
+#### Task 3 (approved by TA during the lab).
 Produce a plan including:
 - prioritized requirements;
 - a clear breakdown of requirements into three product phases.
 
 Give priority to features that deliver the most value to end users and are easier to implement. Each phase should be a functioning product in itself.
 
-**Task 4.**
+#### Task 4.
 - Implement your product with the core features.
 - Publish all code as a repo on github.
 - Dockerize all services.
 - Deploy it to be accessible to use.
 
-**Task 5.**
+#### Task 5.
 Submit presentation with five slides:
 
 1. Title:
