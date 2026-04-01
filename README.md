@@ -55,6 +55,8 @@ Version 2 builds upon Version 1:
 
 Implement both versions outlined in the plan:
 - Publish all code as a repo on github;
+- Follow best practices and git workflow;
+- Document your solution;
 - Dockerize all services;
 - Deploy it to be accessible to use.
 
