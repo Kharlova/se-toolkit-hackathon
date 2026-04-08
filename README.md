@@ -6,8 +6,7 @@ A simple web application to track your plants and their watering schedules. Neve
 
 🌐 **Live demo:** http://10.93.26.70:8000
 
-![Add Plant Form](static/screenshot_add.png)
-![Plants Dashboard](static/screenshot_dashboard.png)
+> See screenshots in the presentation slides (Slide 4) or visit the live demo above.
 
 ## Product Context
 
