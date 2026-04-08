@@ -1,7 +1,19 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(which *)",
+      "Bash(python3 *)",
+      "Bash(pip list)",
+      "Bash(pip install *)",
+      "Bash(playwright *)",
+      "Bash(.venv/bin/pip *)",
+      "Bash(.venv/bin/playwright *)",
+      "Bash(file *)",
+      "Bash(cp *)"
     ]
-  }
+  },
+  "$version": 3
 }
