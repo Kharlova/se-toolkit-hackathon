@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Watering Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container py-4">
+        <header class="text-center mb-4">
+            <h1><i class="bi bi-flower1 text-success"></i> Plant Watering Tracker</h1>
+            <p class="text-muted">Track your plants and never forget to water them again!</p>
+        </header>
+
+        <!-- Add Plant Form -->
+        <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="bi bi-plus-circle"></i> Add New Plant</h5>
+            </div>
+            <div class="card-body">
+                <form id="addPlantForm" class="row g-3">
+                    <div class="col-md-5">
+                        <label for="plantName" class="form-label">Plant Name</label>
+                        <input type="text" class="form-control" id="plantName" required placeholder="e.g., Monstera">
+                    </div>
+                    <div class="col-md-5">
+                        <label for="wateringFrequency" class="form-label">Watering Frequency (days)</label>
+                        <input type="number" class="form-control" id="wateringFrequency" required min="1" max="365" placeholder="e.g., 7">
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="bi bi-plus-lg"></i> Add
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Plants List -->
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="bi bi-list-ul"></i> My Plants</h5>
+            </div>
+            <div class="card-body">
+                <div id="plantsList" class="row g-3">
+                    <!-- Plants will be dynamically inserted here -->
+                </div>
+                <div id="noPlantsMessage" class="text-center text-muted py-4">
+                    <i class="bi bi-emoji-smile" style="font-size: 3rem;"></i>
+                    <p class="mt-2">No plants yet! Add your first plant above.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Water Confirmation Modal -->
+    <div class="modal fade" id="waterModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">Water Plant</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Mark <strong id="modalPlantName"></strong> as watered?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" id="confirmWaterBtn">
+                        <i class="bi bi-droplet"></i> Yes, Water It!
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>

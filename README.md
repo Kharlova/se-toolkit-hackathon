@@ -1,170 +1,146 @@
-# Lab 9 - Quiz and Hackathon
+# 🌱 Plant Watering Tracker
 
-The lab opens with a quiz and then kicks off the hackathon.
+A simple web application to track your plants and their watering schedules. Never forget to water your plants again!
 
-To get the full point for the lab, you need to:
+## Demo
 
-- Pass Tasks 1, 2, 3 during the lab AND
-- Finish Tasks 4 and 5 by the usual deadline of Thursday 23:59.
+![Add Plant Form](static/screenshot_add.png)
+![Plants Dashboard](static/screenshot_dashboard.png)
 
-Each student builds their own project:
+## Product Context
 
-- Go from an idea to a deployed product.
-- Use agents and LLMs throughout.
+### End Users
 
-----
+Plant owners (beginners and experienced) who want to maintain a consistent watering schedule for their indoor/outdoor plants.
 
-## Task 1 (graded by TA after the lab)
+### Problem
 
-Pen and paper quiz:
+Plant owners often forget when they last watered their plants or struggle to maintain consistent watering schedules, leading to under/over-watering and plant health issues.
 
-- 20 mins;
-- closed book, no devices;
-- you get 3 random questions from the question bank;
-- answer at least 2.
+### Solution
 
-## Task 2 (approved by TA during the lab)
+A simple web app where users can:
+- Add plants with custom watering frequencies
+- Track when each plant was last watered
+- See visual status indicators (overdue, due today, good)
+- Mark plants as watered with one click
 
-Ideate and plan your project.
+## Features
 
-### Project idea
+### Implemented (Version 2)
 
-The project idea must be:
+- ✅ Add plants with name and watering frequency
+- ✅ Automatic watering schedule calculation
+- ✅ Visual status indicators (overdue/due today/upcoming)
+- ✅ One-click watering confirmation
+- ✅ Delete plants
+- ✅ SQLite database persistence
+- ✅ Docker support for easy deployment
+- ✅ Responsive Bootstrap UI
+- ✅ RESTful API
 
-- something simple to build;
-- clearly useful;
-- easy to explain.
+### Not Yet Implemented
 
-Define and show to your TA:
+- ⬜ Plant categories/tags
+- ⬜ Notifications/reminders
+- ⬜ Photo uploads for plants
+- ⬜ Multiple user accounts
+- ⬜ Export/import data
 
-- End-user of the product
-- What problem your product solves for the end-user?
-- The product idea in one short sentence.
-- What is the product's core feature?
+## Usage
 
-### Implementation plan
+### Running Locally (without Docker)
 
-When the idea is approved, produce a plan for two product versions.
+1. Ensure Python 3.11+ is installed
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Start the server:
+   ```bash
+   uvicorn app:app --host 0.0.0.0 --port 8000
+   ```
+4. Open browser and navigate to: `http://localhost:8000`
 
-Version 1 does one core thing well:
+### Using the Application
 
-- Pick the one feature most valuable to the end-user and relatively easy to implement;
-- It is a functioning product, not a prototype;
-- Must be shown to the TA upon completion for feedback.
+1. **Add a Plant**: Fill in the plant name and watering frequency (in days), then click "Add"
+2. **View Status**: Each plant card shows:
+   - 🔴 **Red border**: Overdue for watering
+   - 🟡 **Yellow border**: Due today
+   - 🟢 **Green border**: Good, next watering in X days
+3. **Water a Plant**: Click the "Water" button to mark it as watered
+4. **Delete a Plant**: Click the trash icon to remove a plant
 
-Version 2 builds upon Version 1:
+## Deployment
 
-- Improves the initial feature or adds another one on top;
-- Address TA feedback from the lab;
-- Deploy and make it available for use.
+### Requirements
 
-The product must have the following components, each fulfilling a useful function:
+- **OS**: Ubuntu 24.04 (or any Linux with Docker support)
+- **Required Software**:
+  - Docker
+  - Docker Compose
 
-- backend;
-- database;
-- end-user-facing client: web app, mobile app, or LLM-powered agent, e.g. `nanobot`.
+### Step-by-Step Deployment
 
-Note:
+1. **Clone the repository**:
+   ```bash
+   git clone <your-repo-url>
+   cd se-toolkit-hackathon
+   ```
 
-- You can use the setup from Lab 8 or start from scratch.
-- `Telegram` bots are blocked on university VMs.
+2. **Build and start with Docker Compose**:
+   ```bash
+   docker compose up -d --build
+   ```
 
-## Task 3 (approved by TA during the lab)
+3. **Access the application**:
+   Open browser and navigate to: `http://<your-server-ip>:8000`
 
-Implement Version 1 outlined in the plan:
+### Manual Deployment (without Docker)
 
-- Build one core feature;
-- Follow best practices and git workflow;
-- Test it yourself and fix bugs;
-- Have the TA try it as a user;
-- Take note of the TA feedback;
-- Get TA's approval for the task to be marked as DONE.
+1. Install Python 3.11+:
+   ```bash
+   sudo apt update
+   sudo apt install python3.11 python3-pip
+   ```
 
-## Task 4
+2. Install dependencies:
+   ```bash
+   pip3 install -r requirements.txt
+   ```
 
-Implement and deploy Version 2 outlined in the plan:
+3. Run with uvicorn:
+   ```bash
+   uvicorn app:app --host 0.0.0.0 --port 8000
+   ```
 
-- Build and polish functionality;
-- Take TA feedback into account;
-- Push all code to the GitHub repo (see the detailed instructions below);
-- Follow best practices and git workflow;
-- Document your solution;
-- Dockerize all services;
-- Deploy it to be accessible to use.
+4. (Optional) Run as a systemd service for production
 
-Version 2 can be completed during the lab or after it, before the usual deadline.
+## Project Structure
 
-## Task 5 (demo and PDF submitted through Moodle)
+```
+se-toolkit-hackathon/
+├── app.py              # FastAPI backend
+├── requirements.txt    # Python dependencies
+├── Dockerfile          # Docker image definition
+├── docker-compose.yml  # Docker Compose configuration
+├── .dockerignore       # Docker ignore patterns
+├── data/               # SQLite database (auto-created)
+│   └── plants.db
+└── static/             # Frontend files
+    ├── index.html
+    ├── style.css
+    └── app.js
+```
 
-Submit a presentation with five slides:
+## Technology Stack
 
-1. Title:
+- **Backend**: Python FastAPI
+- **Database**: SQLite
+- **Frontend**: HTML5, CSS3, JavaScript (Bootstrap 5)
+- **Deployment**: Docker & Docker Compose
 
-   - Product title
-   - Your name
-   - Your university email
-   - Your group
+## License
 
-2. Context:
-
-   - End-user of the product
-   - What problem your product solves
-   - The product idea in one short sentence
-
-3. Implementation:
-
-   - How you built the product
-   - What went into Version 1 and Version 2
-   - What TA feedback points you addressed
-
-4. Demo:
-
-   - Pre-recorded video demonstration of Version 2 with voice-over (no longer than 2 minutes).
-   - _Note:_ **This is the most important part of the presentation**.
-
-5. Links:
-
-   - Link and QR code for each of these:
-     - The GitHub repo with the product code
-     - Deployed product (latest version)
-
-----
-
-## Publishing the product code on GitHub
-
-- Publish the product code in a repository on `GitHub`.
-
-  The repository must be called `se-toolkit-hackathon`.
-
-- Add the MIT license file to make your product open-source.
-
-- Add `README.md` in the product repository.
-
-  `README.md` structure:
-
-  - Product name (as title)
-
-  - One-line description
-
-  - Demo:
-    - A couple of relevant screenshots of the product
-
-  - Product context:
-
-    - End users
-    - Problem that your product solves for end users
-    - Your solution
-
-  - Features:
-
-    - Implemented and not yet implemented features
-
-  - Usage:
-
-    - Explain how to use your product
-
-  - Deployment:
-
-    - Which OS the VM should run on (you may assume `Ubuntu 24.04` like on your university VMs)
-    - What should be installed on the VM
-    - Step-by-step deployment instructions
+MIT License - see LICENSE file for details.

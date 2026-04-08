@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Watering Tracker - Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .slide {
+            width: 297mm;
+            height: 210mm;
+            padding: 60px;
+            page-break-after: always;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .slide::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+        }
+        
+        .slide-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .title-slide {
+            text-align: center;
+        }
+        
+        .title-slide h1 {
+            font-size: 4em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .title-slide .icon {
+            font-size: 6em;
+            margin-bottom: 30px;
+        }
+        
+        .title-slide .info {
+            font-size: 1.5em;
+            margin: 20px 0;
+            opacity: 0.9;
+        }
+        
+        .content-slide h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            border-bottom: 3px solid white;
+            padding-bottom: 15px;
+        }
+        
+        .content-slide ul {
+            font-size: 1.4em;
+            margin-left: 40px;
+        }
+        
+        .content-slide li {
+            margin: 20px 0;
+            line-height: 1.4;
+        }
+        
+        .content-slide p {
+            font-size: 1.4em;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        
+        .demo-slide {
+            text-align: center;
+        }
+        
+        .demo-slide h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        
+        .demo-slide .demo-box {
+            background: white;
+            color: #333;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 30px 0;
+            font-size: 1.3em;
+        }
+        
+        .links-slide h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+        
+        .link-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px 35px;
+            margin: 25px 0;
+            border-radius: 10px;
+            font-size: 1.3em;
+        }
+        
+        .link-item strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .qr-placeholder {
+            width: 150px;
+            height: 150px;
+            background: white;
+            margin: 15px auto;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        
+        @media print {
+            .slide {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Title -->
+    <div class="slide title-slide">
+        <div class="slide-content">
+            <div class="icon">🌱</div>
+            <h1>Plant Watering Tracker</h1>
+            <div class="info">Your Name</div>
+            <div class="info">your.email@university.edu</div>
+            <div class="info">Group XX</div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Context -->
+    <div class="slide content-slide">
+        <div class="slide-content">
+            <h2>Context</h2>
+            <p><strong>End User:</strong> Plant owners who want to maintain healthy plants through consistent watering schedules</p>
+            <p><strong>Problem:</strong> Plant owners often forget when they last watered their plants or struggle to maintain consistent watering schedules, leading to plant health issues</p>
+            <p><strong>Solution:</strong> A simple web app to track plants, set watering schedules, and mark watering completion with visual status indicators</p>
+        </div>
+    </div>
+
+    <!-- Slide 3: Implementation -->
+    <div class="slide content-slide">
+        <div class="slide-content">
+            <h2>Implementation</h2>
+            <ul>
+                <li><strong>Technology Stack:</strong> Python FastAPI backend, SQLite database, HTML/CSS/JS frontend with Bootstrap</li>
+                <li><strong>Version 1:</strong> Core feature - add plants, set watering frequency, view schedules, mark as watered</li>
+                <li><strong>Version 2:</strong> Added SQLite persistence, Docker support, responsive UI with status indicators, deployment-ready</li>
+                <li><strong>TA Feedback Addressed:</strong> Database persistence, improved UX with visual status indicators, Docker deployment</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 4: Demo -->
+    <div class="slide demo-slide">
+        <div class="slide-content">
+            <h2>Demo</h2>
+            <div class="demo-box">
+                <p><strong>📹 Video Demonstration</strong></p>
+                <p style="margin-top: 20px;">Pre-recorded video demonstration of Version 2 with voice-over</p>
+                <p style="margin-top: 15px; color: #666;">(Insert your 2-minute video here)</p>
+                <p style="margin-top: 30px; font-size: 0.9em; color: #999;">Show: Adding a plant → Viewing schedule → Marking as watered → Status update</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Links -->
+    <div class="slide links-slide">
+        <div class="slide-content">
+            <h2>Links</h2>
+            <div class="link-item">
+                <strong>📦 GitHub Repository</strong>
+                <p>https://github.com/yourusername/se-toolkit-hackathon</p>
+                <div class="qr-placeholder">QR Code<br>for GitHub</div>
+            </div>
+            <div class="link-item">
+                <strong>🌐 Deployed Product</strong>
+                <p>http://your-server-ip:8000</p>
+                <div class="qr-placeholder">QR Code<br>for Live Demo</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Print instructions
+        console.log('To create PDF: Press Ctrl+P (or Cmd+P on Mac) and select "Save as PDF" as the destination');
+    </script>
+</body>
+</html>

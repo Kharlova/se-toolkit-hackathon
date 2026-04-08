@@ -1,0 +1,98 @@
+body {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    min-height: 100vh;
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 12px;
+}
+
+.card-header {
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.plant-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.plant-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.plant-card.overdue {
+    border-left: 5px solid #dc3545;
+}
+
+.plant-card.due-today {
+    border-left: 5px solid #ffc107;
+}
+
+.plant-card.good {
+    border-left: 5px solid #28a745;
+}
+
+.plant-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.watering-info {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.status-badge {
+    font-size: 0.85rem;
+    padding: 0.4em 0.8em;
+    border-radius: 20px;
+}
+
+.water-btn {
+    border-radius: 25px;
+    padding: 0.5rem 1.2rem;
+}
+
+.water-btn i {
+    margin-right: 0.3rem;
+}
+
+.delete-btn {
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+}
+
+#noPlantsMessage {
+    display: block;
+}
+
+#noPlantsMessage.hidden {
+    display: none;
+}
+
+.plant-item {
+    background: white;
+    border-radius: 10px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.status-overdue {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.status-due-today {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+.status-good {
+    color: #28a745;
+    font-weight: 600;
+}
