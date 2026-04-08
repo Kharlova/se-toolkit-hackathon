@@ -4,6 +4,8 @@ A simple web application to track your plants and their watering schedules. Neve
 
 ## Demo
 
+🌐 **Live demo:** http://10.93.26.70:8000
+
 ![Add Plant Form](static/screenshot_add.png)
 ![Plants Dashboard](static/screenshot_dashboard.png)
 
@@ -19,33 +21,29 @@ Plant owners often forget when they last watered their plants or struggle to mai
 
 ### Solution
 
-A simple web app where users can:
-- Add plants with custom watering frequencies
-- Track when each plant was last watered
-- See visual status indicators (overdue, due today, good)
-- Mark plants as watered with one click
+A simple web app where users can add plants, set watering frequencies, and track watering status with visual indicators — all in one click.
 
 ## Features
 
 ### Implemented (Version 2)
 
-- ✅ Add plants with name and watering frequency
+- ✅ Add plants with custom watering frequency (in days)
 - ✅ Automatic watering schedule calculation
-- ✅ Visual status indicators (overdue/due today/upcoming)
-- ✅ One-click watering confirmation
+- ✅ Visual status indicators (🔴 overdue / 🟡 due today / 🟢 good)
+- ✅ One-click "Water" button to mark as watered
 - ✅ Delete plants
 - ✅ SQLite database persistence
-- ✅ Docker support for easy deployment
-- ✅ Responsive Bootstrap UI
-- ✅ RESTful API
+- ✅ Dockerized for easy deployment
+- ✅ Responsive UI
+- ✅ RESTful JSON API
 
 ### Not Yet Implemented
 
 - ⬜ Plant categories/tags
-- ⬜ Notifications/reminders
+- ⬜ Email/push notifications/reminders
 - ⬜ Photo uploads for plants
-- ⬜ Multiple user accounts
-- ⬜ Export/import data
+- ⬜ Multi-user accounts
+- ⬜ Data export/import (CSV, JSON)
 
 ## Usage
 
@@ -58,19 +56,19 @@ A simple web app where users can:
    ```
 3. Start the server:
    ```bash
-   uvicorn app:app --host 0.0.0.0 --port 8000
+   python app.py
    ```
 4. Open browser and navigate to: `http://localhost:8000`
 
 ### Using the Application
 
 1. **Add a Plant**: Fill in the plant name and watering frequency (in days), then click "Add"
-2. **View Status**: Each plant card shows:
-   - 🔴 **Red border**: Overdue for watering
-   - 🟡 **Yellow border**: Due today
-   - 🟢 **Green border**: Good, next watering in X days
-3. **Water a Plant**: Click the "Water" button to mark it as watered
-4. **Delete a Plant**: Click the trash icon to remove a plant
+2. **View Status**: Each plant card shows a colored border:
+   - 🔴 **Red**: Overdue for watering
+   - 🟡 **Yellow**: Due today
+   - 🟢 **Green**: Good, next watering in X days
+3. **Water a Plant**: Click the "Water 💧" button to mark it as watered today
+4. **Delete a Plant**: Click the "Delete" button to remove a plant
 
 ## Deployment
 
@@ -85,7 +83,7 @@ A simple web app where users can:
 
 1. **Clone the repository**:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/Kharlova/se-toolkit-hackathon.git
    cd se-toolkit-hackathon
    ```
 
@@ -97,31 +95,25 @@ A simple web app where users can:
 3. **Access the application**:
    Open browser and navigate to: `http://<your-server-ip>:8000`
 
-### Manual Deployment (without Docker)
+### Useful Commands
 
-1. Install Python 3.11+:
-   ```bash
-   sudo apt update
-   sudo apt install python3.11 python3-pip
-   ```
+```bash
+# View logs
+docker compose logs -f
 
-2. Install dependencies:
-   ```bash
-   pip3 install -r requirements.txt
-   ```
+# Stop the application
+docker compose down
 
-3. Run with uvicorn:
-   ```bash
-   uvicorn app:app --host 0.0.0.0 --port 8000
-   ```
-
-4. (Optional) Run as a systemd service for production
+# Update and redeploy
+git pull
+docker compose up -d --build
+```
 
 ## Project Structure
 
 ```
 se-toolkit-hackathon/
-├── app.py              # FastAPI backend
+├── app.py              # Backend server (http.server + SQLite)
 ├── requirements.txt    # Python dependencies
 ├── Dockerfile          # Docker image definition
 ├── docker-compose.yml  # Docker Compose configuration
@@ -136,9 +128,9 @@ se-toolkit-hackathon/
 
 ## Technology Stack
 
-- **Backend**: Python FastAPI
+- **Backend**: Python (stdlib `http.server`)
 - **Database**: SQLite
-- **Frontend**: HTML5, CSS3, JavaScript (Bootstrap 5)
+- **Frontend**: HTML5, CSS3, JavaScript
 - **Deployment**: Docker & Docker Compose
 
 ## License
