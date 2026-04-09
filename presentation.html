@@ -197,12 +197,29 @@
             object-fit: contain;
         }
 
+        @page {
+            size: landscape;
+            margin: 0;
+        }
+
         @media print {
-            .slide {
-                page-break-after: always;
-            }
             body {
                 background: white;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .slide {
+                width: 297mm;
+                height: 210mm;
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0;
+                padding: 60px 80px;
+            }
+
+            .slide:last-child {
+                page-break-after: avoid;
             }
         }
     </style>
@@ -247,21 +264,10 @@
     <div class="slide demo-slide">
         <div class="slide-content">
             <h2>Demo</h2>
-            <div class="video-placeholder">
-                <div class="play-icon">▶️</div>
-                <p style="font-size: 1.4em;"><strong>Pre-recorded Video Demonstration</strong></p>
-                <p style="margin-top: 10px; font-size: 1.1em; opacity: 0.8;">(Insert your 2-minute video with voice-over here)</p>
-            </div>
-            <div class="steps">
-                <h3>Demo Flow:</h3>
-                <ol>
-                    <li>Open the app at <code>http://10.93.26.70:8000</code></li>
-                    <li>Add a new plant with watering frequency</li>
-                    <li>View status indicators (🔴 overdue / 🟡 due today / 🟢 good)</li>
-                    <li>Click "Water 💧" to mark as watered</li>
-                    <li>Status updates automatically</li>
-                </ol>
-            </div>
+            <video width="100%" controls style="max-height: 55vh; border-radius: 10px;">
+                <source src="static/demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 
