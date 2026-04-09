@@ -235,9 +235,10 @@
             <h2>Implementation</h2>
             <p><strong>Stack:</strong> Python (http.server) backend, SQLite database, HTML/CSS/JS frontend, Docker for deployment.</p>
             <ul>
-                <li><strong>Version 1:</strong> Core feature — add plants, set watering frequency, view schedules, mark as watered, one-click watering.</li>
-                <li><strong>Version 2:</strong> Added SQLite persistence, visual status indicators (overdue/due today/good), responsive UI, Docker deployment on university VM.</li>
-                <li><strong>TA Feedback Addressed:</strong> Database persistence for data durability, improved UX with color-coded status indicators, production-ready Docker deployment.</li>
+                <li><strong>Single-version approach:</strong> Built one polished product with a clear core feature — add plants, set watering frequency, track status, and mark as watered in one click.</li>
+                <li><strong>Backend & Database:</strong> Python HTTP server with RESTful JSON API, SQLite for persistent plant data and watering history.</li>
+                <li><strong>Frontend:</strong> Responsive HTML/CSS/JS dashboard with color-coded status indicators (🔴 overdue / 🟡 due today / 🟢 good).</li>
+                <li><strong>Deployment:</strong> Dockerized all services, deployed on university VM for public access.</li>
             </ul>
         </div>
     </div>
